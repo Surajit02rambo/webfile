@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Hammersmith+One&family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="icon" href="D:\Web Development Codings\Website\websiteicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Squada+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+        * {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #52647a;
+  text-align: center;
+  text-decoration: none;
+}
+
+#wrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*- Navigation -*/
+#nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(https://images.pexels.com/photos/3308588/pexels-photo-3308588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: contain;
+  box-shadow: inset -0px 0px 15px 0px #00000085;
+}
+
+.navitem {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+}
+
+.navitem:hover {
+  background-color: #00000020;
+  animation: fadeEffect 0.5s;
+}
+
+.material-icons {
+  text-shadow: 0px -1px 0px #fff, 1px 1px 1px #000000a1;
+  color: #52647a;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  font-size: 30px;
+}
+
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  overflow: hidden;
+  border: none;
+  border-top: 1px solid #999;
+  background-color: #eee;
+  color: #eee;
+  height: 1px;
+  *height: 2px;
+}
+
+.favorite {
+  color: #ffffff;
+  font-size: 24px;
+  z-index: 2;
+  position: relative;
+  left: auto;
+  margin-top: -15px;
+}
+
+#infobg {
+  position: absolute;
+  left: 7px;
+  bottom: -43px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #52647a;
+  border-style: ridge;
+  border-width: 2px;
+  border-color: #e4e4e4;
+  z-index: 0;
+  cursor: pointer;
+}
+
+/*- Content -*/
+#content-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 100px);
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pageitem {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  animation: fadeEffect 1.15s;
+}
+
+.active {
+  background-color: #210866;
+  animation: fadeEffect 1.15s;
+}
+
+.active > i {
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 0px rgb(31, 27, 27), 1px 1px 1px #000000a1;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 4;
+  }
+}
+
+/*- Model -*/
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeEffect 0.5s;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaaaaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+        :root {
+  --page-1-color: url();
+  --animate-speed: 1.5s;
+}
+
+
+
+/* Page Colors */
+/* #page-1 { background: var(--page-1-color); } */
+
+.overlay{
+  color: #333;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.page h1 {
+  margin: 1rem;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.page p { 
+  font-size: 15px !important; 
+}
+
+.btn {
+  display: block;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background: #ffd23d;
+  color: rgb(17, 17, 17);
+  font-size: 1.05rem;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease-in;
+  transform: translateX(-2100px);
+  animation: text var(--animate-speed) forwards ease-in 1.5s;
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  
+}
+
+.btn:hover,
+.btn-dark {
+  background: rgb(255, 255, 255);
+  color: rgb(39, 37, 3);
+}
+
+.btn-dark:hover {
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Page Animation */
+#page-1 h1 {
+  transform: translateY(-1200px);
+  animation: heading var(--animate-speed) forwards ease-in;
+}
+
+#page-1 p {
+  transform: translateX(-2100px);
+  animation: text var(--animate-speed) forwards ease-in 1s;
+}
+
+.sample{
+  height: 300px;
+   width: 400px;
+}
+/* Keyframes */
+@keyframes heading {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes text {
+  to {
+    transform: translateX(0);
+  }
+}
+@media only screen and (max-device-width: 700px){
+  p{
+    font-size: -3px;
+  }
+  h1{
+     font-size: 33px !important;
+  }
+  .sample{
+    height: 180px;
+    width: 180px;
+  }
+}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="nav">
+          <div id="navone" class="navitem active" onclick="nav(event, 'pageone')">
+            <i class="fas fa-house-user" style="margin-top: 30px; font-size: 40px; color: #eee;"></i>
+          </div>
+          <hr>
+          <div id="navtwo" class="navitem" onclick="nav(event, 'pagetwo')">
+            <i class="far fa-calendar-alt" style="margin-top: 30px; font-size: 40px; color: #eee;"></i>
+          </div>
+          <hr>
+          <div id="navfour" class="navitem" onclick="nav(event, 'pagefour')">
+            <i class="fas fa-file-upload" style="margin-top: 30px; font-size: 40px; color: #eee;"></i>
+          </div>
+          <hr>
+          <div id="infobg" style="margin-top: -50px;">
+            
+          </div>
+        </div>
+        <div id="content-wrapper">
+          <div id="pageone" class="pageitem" style="display: block; background:url(https://www.pcclean.io/wp-content/gallery/geometry-hd-wallpapers/782372.png);">
+            <!-- Page One Content --->
+            <p id="sample">Profile</p>
+          </div>
+          <div id="pagetwo" class="pageitem" style="display: none;background: url(https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Colorful-Geometric-Wallpaper-12.png);
+          background-size: cover;">
+            <!-- Page Two Content --->
+            <p id="sample">Classes</p>
+            
+          </div>
+          <div id="pagefour" class="pageitem" style="display: none; background: url(https://images.wallpaperscraft.com/image/cup_coffee_books_156306_6016x4000.jpg);
+          background-size: cover;background-repeat: no-repeat;">
+            <!-- Page Four Content --->
+            <p id="sample"></p>
+            <!-- Page 1 (Intro) -->
+<section id="page-1" style="background: rgba(0,0,0,0.658); margin-top: -20px;" class="page">
+  <div style="z-index:-2;background: var(--page-1-color);background-size: cover;position:absolute; inset:0 0 0 0 ; height:100vh; width:100vw;"></div>
+    <h1 style="font-family: 'Merienda', cursive;padding: 0px 15px 3px 15px; width: fit-content;border-bottom: 5px solid rgb(255, 242, 55);
+    font-family: 'Bowlby One SC', cursive;color: #fff;"> ASSIGMENT </h1>
+    <p style="font-size: 30px !important;color: blanchedalmond;font-family: 'Black Ops One', cursive;">Assignment coming up on next Sunday</p>
+    <div>
+      <div class="sample" style="background-color: rgba(255, 248, 220, 0.63); -webkit-backdrop-filter: blur(20px);backdrop-filter: blur(5px);">
+        <p style="text-align: center;margin-top: 12px !important;color: black;font-family: 'Black Ops One', cursive;font-size: 25px !important;">
+         Sample Assignment<br>
+         Coming Soon!!
+        </p>
+      </div>
+      <a href="#page-2" class="btn" style="font-weight: bold;font-family: 'Squada One', cursive;">
+        Assignment Form<i class="fas fa-upload" style="margin-left: 10px;color: #000;"></i>
+      </a>
+    </div>
+  </section>
+  
+          </div>
+        </div>
+      </div>
+      <script>
+          function nav(evt, pageName) {
+  var i, pageitem, navitem;
+
+  pageitem = document.getElementsByClassName("pageitem");
+  for (i = 0; i < pageitem.length; i++) {
+    pageitem[i].style.display = "none";
+  }
+
+  navitem = document.getElementsByClassName("navitem");
+  for (i = 0; i < navitem.length; i++) {
+    navitem[i].className = navitem[i].className.replace(" active", "");
+  }
+
+  document.getElementById(pageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("infobtn");
+var btn2 = document.getElementById("infobg");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+};
+
+btn2.onclick = function() {
+  modal.style.display = "block";
+};
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+      </script>
+</body>
+</html>

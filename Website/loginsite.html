@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="icon" href="D:\Web Development Codings\Website\websiteicon.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>sign in/up</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		
+   <style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body{
+	background: url(https://images.pexels.com/photos/417192/pexels-photo-417192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	background-size: cover;
+	height: 700px;
+	width: 100%;
+	background-repeat: no-repeat;
+
+	
+}
+
+.signBox *{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.forms-link{
+  color: inherit;
+  text-decoration: none
+}
+
+.signBox{
+  color: #fff;
+	width: 80%;
+	margin: auto;
+	max-width: 456px;
+	min-height: 600px;
+	position: relative;
+	margin-top: 35px;
+	background: rgba(255, 255, 255, 0.137) no-repeat center;
+	-webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(2px);
+  background-size: cover;
+	box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.2);
+  animation: hueRot 3s ease-in-out infinite;
+  border-radius: 50px 0px 50px 0px;
+  
+}
+/*
+Old NYC: https://i.pinimg.com/originals/30/c6/a9/30c6a932029e8a47b853c082fd947e80.jpg
+Dark Night 1: https://images.unsplash.com/photo-1514439827219-9137a0b99245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+Dark Night 2: https://images.unsplash.com/photo-1525036984299-360cc38f470a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80
+*/
+.signBox-inner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 70px 20px 50px 20px;
+
+	margin-top: -20px;
+}
+.signIn-form,
+.signUp-form{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	transition: all .4s linear;
+  margin-top: 20px;
+  
+}
+.signIn-btn,
+.signUp-btn,
+.check{
+	display: none;
+}
+.tab,
+.label,
+.button{
+	text-transform: uppercase;
+}
+.tab{
+	font-size: 22px;
+	margin-right: 15px;
+	padding-bottom: 5px;
+	margin: 0 15px 10px 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.signIn-btn:checked + .tab,
+.signUp-btn:checked + .tab{
+	color:  rgb(255, 255, 255);
+	border-color: #ffb46d;
+}
+.forms-wrap{
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+  margin-top: -12px;
+  border-top: 2px solid rgba(255,255,255,0.2);
+}
+.group{
+	margin-bottom: 15px;
+}
+
+.label,
+.input,
+.button{
+	width: 100%;
+	color: rgb(22, 20, 20);
+	display: block;
+	outline: none;
+}
+
+.label{
+	color: rgb(255, 253, 253);
+	font-size: 15px;
+  margin:  0px 0px 5px 0px;
+}
+
+.button{
+	background:  #fdca5af5;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+.button:hover{
+  box-shadow: 0px 4px 10px rgba(30,30,30,0.2);
+}
+
+.icon{
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	position: relative;
+	display: inline-block;
+	background: rgba(255,255,255,.1);
+}
+.icon:before,
+.icon:after{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	transition: all .2s ease-in-out 0s;
+}
+.icon:before{
+	left: 3px;
+	width: 5px;
+	bottom: 6px;
+	transform: scale(0) rotate(0);
+}
+.icon:after{
+	top: 6px;
+	right: 0;
+	transform: scale(0) rotate(0);
+}
+.check:checked + label{
+	color: #fff;
+}
+.check:checked + label .icon{
+	background: #ffbf6d;
+}
+.check:checked + label .icon:before{
+	transform: scale(1) rotate(45deg);
+}
+.check:checked + label .icon:after{
+	transform: scale(1) rotate(-45deg);
+}
+.signIn-btn:checked + .tab + .signUp-btn + .tab + .forms-wrap .signIn-form{
+	transform: rotate(0);
+}
+.signUp-btn:checked + .tab + .forms-wrap .signUp-form{
+	transform: rotate(0);
+}
+
+.hr{
+	height: 2px;
+	margin: 30px 0px 20px 0px;
+	background: rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align: center;
+	margin-top: -10px;
+}
+
+.button{
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+}
+
+.input{
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	background:  linear-gradient(90deg, rgba(255, 255, 255, 0.322), rgba(255,255,255,0.5) 50%);
+  background-position-x:  50%;
+  background-size:  200% 100%;
+  animation:  gradBack 300ms ease-in-out forwards;
+}
+
+.button:focus{
+	outline:  none;
+}
+.tab-1{
+	margin-top: -10px;
+	font-size: 15px;
+}
+.social-container {
+	margin: 20px 30%;
+    width: 80%;
+	
+	position: absolute;
+	
+	
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 5px;
+	height: 40px;
+	width: 40px;
+}
+.social-container a:hover{
+    border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 50px;
+	width: 50px;
+}
+.social-container i{
+	margin-top: -8px;
+}
+@media only screen and (max-device-width:350px){
+	.social-container{
+		margin: 20px 13%;
+	}
+}
+@media only screen and (max-device-width:500px){
+	.social-container{
+		margin: 20px 27%;
+	}
+}
+@media only screen and (max-device-width:400px){
+	.social-container{
+		margin: 20px 18%;
+	}
+}
+
+   </style>
+</head>
+
+<body>
+	<div class="signBox" id="signBox">
+		<div class="signBox-inner">
+			<input id="tab-1" type="radio" name="tab" class="signIn-btn" checked>
+			<label for="tab-1" class="tab" style="font-size: 25px !important;"><b>Sign In</b></label>
+			<input id="tab-2" type="radio" name="tab" class="signUp-btn">
+			<label for="tab-2" class="tab"><b>Sign Up</b></label>
+			<div class="forms-wrap">
+				<div class="signIn-form" style="outline: none;">
+					<div class="group">
+						<label for="user" class="label" style="outline: none;">Username</label>
+						<input id="user" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">Password</label>
+						<input id="pass" type="password" class="input" data-type="password">
+					</div>
+					<div class="group">
+						<input id="check" type="checkbox" class="check" checked>
+						<label for="check"><span class="icon"></span> Keep me Signed in</label>
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="Sign In">
+					</div>
+					<div class="hr"></div>
+					<div class="foot-lnk">
+						<a class="forms-link" href="#">Forgot Password?</a>
+					</div>
+					
+						<div class="social-container" >
+							<a href="#" class="social"><i class="bi bi-facebook" style="color: #fff;
+								font-size: 20px;"></i></a>
+							<a href="#" class="social"><i class="bi bi-google" style="color: #fff; font-size: 20px"></i></a>
+							<a href="#" class="social"><i class="bi bi-linkedin" style="color: #fff; font-size: 20px"></i></a>
+					
+					</div>
+				
+                        
+				</div>
+				<div class="signUp-form">
+					<div class="group">
+						<label for="user" class="label">Username</label>
+						<input id="user" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">Password</label>
+						<input id="pass" type="password" class="input" data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">Repeat Password</label>
+						<input id="pass" type="password" class="input" data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">Email Address</label>
+						<input id="pass" type="text" class="input">
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="Sign Up">
+					</div>
+					<div class="hr"></div>
+					<div class="foot-lnk">
+						<label for="tab-1">Already Member?</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

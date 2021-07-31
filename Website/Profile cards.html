@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="D:\Web Development Codings\Website\websiteicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+    <title>PROFILE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  background: ;
+}
+body{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  position: relative;
+  background: url(https://images.pexels.com/photos/2603464/pexels-photo-2603464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+}
+body::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: url(https://images.pexels.com/photos/2603464/pexels-photo-2603464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  clip-path: inset(47% 0 0 0);
+  z-index: -1;
+  height: 100%;
+}
+
+.container{
+  max-width: 1000px;
+  width: 100%;
+  height: 200%;
+  overflow: hidden;
+  padding: 80px 0;
+  background: url(https://images.pexels.com/photos/2603464/pexels-photo-2603464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: contain;
+}
+.container .main-card{
+  display: flex;
+  justify-content: space-evenly;
+  width: 200%;
+  transition: 1s;
+}
+#two:checked ~ .main-card{
+  margin-left: -100%;
+}
+.container .main-card .cards{
+  width: calc(100% / 2 - 10px);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  justify-content: space-between;
+}
+.main-card .cards .card{
+  width: calc(100% / 3 - 10px);
+  background: rgba(110, 109, 109, 0.63);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  padding: 30px;
+  height: 500px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  border: 1.3px solid #fff;
+}
+.main-card .cards .card:hover{
+  transform: translateY(-15px);
+}
+.cards .card .content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cards .card .content .img1{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: url(c1.jpg);
+  margin-bottom: 14px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform .3s;
+  box-shadow: -5px -5px 10px rgb(24, 22, 22),
+               5px 5px 10px rgb(15, 15, 15);
+}
+.cards .card .content .img1:hover{
+  transform: scale(1.15);
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+  background: url(surajit.jfif);
+}
+.cards .card .content .img2{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 0px;
+  background: url(surajit1.jfif);
+  background-size: cover;
+  margin-bottom: 14px;
+  transition: transform .3s;
+  box-shadow: -5px -5px 10px rgb(24, 22, 22),
+               5px 5px 10px rgb(15, 15, 15);
+}
+.cards .card .content .img2:hover{
+  transform: scale(1.15);
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cards .card .content .img3{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: url(s3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 14px;
+  transition: transform .3s;
+  box-shadow: -5px -5px 10px rgb(24, 22, 22),
+               5px 5px 10px rgb(15, 15, 15);
+}
+.cards .card .content .img3:hover{
+  transform: scale(1.15);
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cards .card .content .img4{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: url(s2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 14px;
+  transition: transform .3s;
+  box-shadow: -5px -5px 10px rgb(24, 22, 22),
+               5px 5px 10px rgb(15, 15, 15);
+}
+.cards .card .content .img4:hover{
+  transform: scale(1.15);
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cards .card .content .img{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: url(p1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 14px;
+  transition: transform .3s;
+  box-shadow: -5px -5px 10px rgb(24, 22, 22),
+               5px 5px 10px rgb(15, 15, 15);
+}
+.cards .card .content .img:hover{
+  transform: scale(1.15);
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .content .name{
+  font-size: 21px;
+  font-weight: 500;
+  font-weight: bold;
+  color: #ffffff;
+}
+.card .content .job{
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+.card .content .media-icons{
+  margin-top: 10px;
+  display: flex;
+
+}
+.media-icons a{
+  text-align: center;
+  line-height: 33px;
+  height: 35px;
+  width: 35px;
+  margin: 0 4px;
+  font-size: 19px;
+  color: rgb(22, 21, 21);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: #fbfffe;
+  transition: all 0.3s ease;
+}
+.media-icons a:hover{
+  color: #0a2e7c;
+  background-color: black;
+  border-color: #070707;
+  
+}
+.media-icons a:hover i{
+    transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #9e366f;
+  background: -webkit-linear-gradient(45deg, #eef3f5, #f8fcff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+.skills {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+  margin-top: 30px;
+}
+.skills li {
+  display: inline-block;
+  margin: 0.95em;
+  position: relative;
+  font-size: 1em;
+  margin-top: -5px;
+}
+.skills i {
+  color: rgb(17, 17, 17);
+  position: absolute;
+  top: 0.55em;
+  left: 0.65em;
+  transition: all 265ms ease-out;
+  font-size: 35px;
+}
+.skills a {
+  display: inline-block;
+}
+.skills a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #c9c6c9, #f3d6f2);
+  transition: all 265ms ease-out;
+  
+}
+
+.skills a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.skills a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #4c377c;
+  background: -webkit-linear-gradient(45deg, #d1c0cc, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+
+ .container .button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.button label{
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  background: #fff;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.button label.active{
+  width: 35px;
+}
+#one:checked ~ .button .one{
+  width: 35px;
+}
+#one:checked ~ .button .two{
+  width: 15px;
+}
+#two:checked ~ .button .one{
+  width: 15px;
+}
+#two:checked ~ .button .two{
+  width: 35px;
+}
+input[type="radio"]{
+  display: none;
+}
+@media (max-width: 768px) {
+  .main-card .cards .card{
+    margin: 20px 0 10px 0;
+    width: calc(100% / 2 - 10px);
+  }
+}
+@media (max-width: 600px) {
+  .main-card .cards .card{
+    /* margin: 20px 0 10px 0; */
+    width: 100%;
+  }
+}
+ @media only screen and (max-device-width: 300px){
+    .skills{
+        margin: 30px 5px;
+    }
+    .skills a:before {
+        height: 55px;
+        width: 55px;
+       
+    }
+    .skills i{
+        margin-left: -8px;
+        margin-top: -10px;
+    }
+    .fas.fa-gamepad{
+        left: 12px;
+    }
+    .fab.fa-python{
+        left: 20px;
+    }
+    .fas.fa-copyright{
+        left: 18px;
+    }
+    .fas.fa-copyright.abc{
+      top: 5px;
+      font-size: -5px;
+      left: 6px;
+    }
+}
+@media only screen and (max-device-width: 390px){
+    .skills{
+        margin: 30px 15px;
+        max-width: 80%;
+    }
+    .skills a:before {
+        height: 85px;
+        width: 85px;
+       
+    }
+    h1{
+      font-size: 50px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: -800px;
+    }
+    .skills i{
+        margin-left: -8px;
+        margin-top: -10px;
+    }
+    .fas.fa-gamepad{
+        left: 12px;
+    }
+    .fab.fa-python{
+        left: 20px;
+    }
+    .fas.fa-copyright{
+        left: 18px;
+    }
+    .fas.fa-copyright.abc{
+      top: 5px;
+      font-size: -5px;
+      left: 6px;
+    }
+}
+@media only screen and (max-device-width: 900px){
+    .skills{
+        margin: 30px 0px;
+    }
+    .skills a:before {
+        height: 55px;
+        width: 55px;
+       
+    }
+
+    .skills i{
+        margin-left: -8px;
+        margin-top: -10px;
+    }
+    .fas.fa-gamepad{
+        left: 12px;
+    }
+    .fab.fa-python{
+        left: 20px;
+    }
+    .fas.fa-copyright{
+        left: 18px;
+    }
+    .fas.fa-copyright.abc{
+      top: 5px;
+      font-size: -5px;
+      left: 6px;
+    }
+
+}
+.job i{
+  color: #fbfffe;
+  font-size: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="dot" id="one">
+        <input type="radio" name="dot" id="two">
+        <div class="main-card">
+          <div class="cards">
+            <div class="card" style="border-radius: 50px 0px 50px 0px;">
+             <div class="content">
+               <div class="img1">
+                <!--- <img src="images/img1.jpg" alt="">-->
+               </div>
+               <div class="details">
+                 <div class="name">Priyanshu Haldar</div>
+                 <div class="job"><i class="fas fa-user-tie"></i>  Co-Owner</div>
+               </div>
+               <div class="media-icons">
+                 <a href="https://www.linkedin.com/in/priyanshu-haldar-61b2731aa/"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://twitter.com/PriyanshuHalda5"><i class="fab fa-twitter"></i></a>
+                 <a href="https://www.instagram.com/haldar.priyanshu/"><i class="fab fa-instagram"></i></a>
+                 <a href="https://github.com/priyanshuhaldar007"><i class="fab fa-github"></i></a>
+               </div>
+               <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/HTML" ><i class="fab fa-html5"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/CSS"><i class="fab fa-css3-alt"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)"><i class="fab fa-bootstrap"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JavaScript"><i class="fab fa-js-square"></i></a></li>
+              </ul>
+              
+             </div>
+            </div>
+            <div class="card" style="border-radius: 60px 60px 60px 60px;">
+             <div class="content">
+               <div class="img2">
+                <!--- <img src="images/img2.jpg" alt="">--->
+               </div>
+               <div class="details">
+                 <div class="name">Surajit Bhattacharyya</div>
+                 <div class="job"><i class="fas fa-user-tie"></i>  Owner</div>
+               </div>
+               <div class="media-icons">
+                 <a href="mailto:surajitbhattacharyya02@gmail.com"><i class="fas fa-envelope"></i></a>
+                 <a href="https://www.linkedin.com/in/surajit-bhattacharyya-bb0b49209"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://instagram.com/bhattacharyya695?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                 <a href="https://github.com/Surajit02rambo"><i class="fab fa-github"></i></a>
+               </div>
+               <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/HTML" ><i class="fab fa-html5"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/CSS"><i class="fab fa-css3-alt"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Video_game_development"><i class="fas fa-gamepad" style="margin-left: -7px;"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/JavaScript"><i class="fab fa-js-square"></i></a></li>
+              </ul>
+             </div>
+            </div>
+            <div class="card" style="border-radius: 0px 50px 0px 50px;">
+             <div class="content">
+               <div class="img3">
+                <!-- <img src="images/img3.jpg" alt="">---->
+               </div>
+               <div class="details">
+                 <div class="name">Sandip Ash</div>
+                 <div class="job"><i class="fas fa-user-tie"></i>  Co-Owner</div>
+               </div>
+               <div class="media-icons">
+                 <a href="mailto:sandipash2020@gmail.com"><i class="fas fa-envelope"></i></a>
+                 <a href="https://www.linkedin.com/in/sandip-ash-b50070201"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://www.instagram.com/doubts_solver/"><i class="fab fa-instagram"></i></a>
+                 <a href="https://github.com/Sandip-Ash"><i class="fab fa-github"></i></a>
+               </div>
+               <ul class="skills">
+                <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)" ><i class="fas fa-copyright"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/C%2B%2B"><i class="fas fa-copyright abc" style="margin-left: -7px; font-size: 28px;
+                  margin-top: 10px;">++</i></a></li>
+                  <li style="margin-left: 13px;"><a href="https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=Python%20is%20a%20multi-paradigm%20programming%20language.%20Object-oriented%20programming,program"
+                     ><i class="fab fa-python"></i></a></li>
+               
+              </ul>
+              
+             </div>
+            </div>
+          </div>
+          <div class="cards">
+            <div class="card" style="border-radius: 50px 0px 50px 0px;">
+             <div class="content">
+               <div class="img4">
+                 <!---<img src="images/img4.jpg" alt="">--->
+               </div>
+               <div class="details">
+                 <div class="name"><i class="fas fa-user-tie"></i>  Subhronil Biswas</div>
+                 <div class="job">Co-Owner</div>
+               </div>
+               <div class="media-icons">
+                <a href="https://www.linkedin.com/in/subhronil-biswas"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/Octane_2002?s=08"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/b_i_s_w_a_s_2002/"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:subhronil2510@gmail.com"><i class="fas fa-envelope"></i></a>
+              </div>
+               <ul class="skills" >
+                <li><a href="https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=Python%20is%20a%20multi-paradigm%20programming%20language.%20Object-oriented%20programming,program" ><i class="fab fa-python"></i></a></li>
+                <li><a href="https://en.wikipedia.org/wiki/HTML" ><i class="fab fa-html5"></i></a></li>
+                <li style="margin-left: 13px;" ><a href="https://en.wikipedia.org/wiki/CSS"><i class="fab fa-css3-alt"></i></a></li>
+                
+              </ul>
+             </div>
+            </div>
+            <div class="card" style="border-radius: 0px 50px 0px 50px;">
+             <div class="content">
+               <div class="img">
+                 <!--<img src="images/img5.jpg" alt="">---->
+               </div>
+               <div class="details">
+                 <div class="name">Proloy Hazra</div>
+                 <div class="job"><i class="fas fa-user-tie"></i>  Co-Owner</div>
+               </div>
+               <div class="media-icons">
+                 <a href="https://www.facebook.com/proloy.hazra.718"><i class="fab fa-facebook-f"></i></a>
+                 <a href="mailto:hazraproloy4@gmail.com"><i class="fas fa-envelope"></i></a>
+                 <a href="https://instagram.com/hazraproloy?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.linkedin.com/in/proloy-hazra-481469212/"><i class="fab fa-linkedin"></i></a>
+               </div>
+               <ul class="skills" style="margin-top: 40px;">
+                <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)" ><i class="fas fa-copyright"></i></a></li>
+               </ul>
+             </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="button">
+          <label for="one" class=" active one"></label>
+          <label for="two" class="two"></label>
+        </div>
+      </div>
+</body>
+</html>
+

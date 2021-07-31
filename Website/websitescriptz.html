@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Hammersmith+One&family=Nunito+Sans:wght@800&family=Playball&family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<link rel="icon" href="D:\Web Development Codings\Website\websiteicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&display=swap" rel="stylesheet">
+	<title>www.scriptz.com</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+body,
+button {
+  font-family: "Nunito", sans-serif;
+}
+body{
+  overflow: hidden;
+}
+.cursor,
+.cursor2,
+.cursor3{
+	position: fixed;
+	border-radius: 0px 20px 20px 20px;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: -100px;
+	top: 50%;
+	mix-blend-mode: difference;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+.cursor{
+	background-color: rgb(255, 213, 232);
+	height: 0;
+	width: 0;
+	z-index: 999999;
+	color: rgb(249, 244, 255);
+}
+.cursor2,.cursor3{
+	height: 47px;
+	width: 47px;
+	z-index:999999;
+	-webkit-transition:all 0.3s ease-out;
+	transition:all 0.3s ease-out;
+	mix-blend-mode: difference;
+}
+.cursor2.hover,
+.cursor3.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none;
+  
+}
+.cursor2{
+	border: 5.5px solid rgb(255, 255, 255);
+	box-shadow: 0 0 55px rgb(255, 209, 235);
+	mix-blend-mode: difference;
+	background-color: rgba(14, 133, 230, 0.76);
+
+}
+.cursor2.hover{
+	background: rgb(255, 235, 253);
+	box-shadow: 0 0 22px rgba(234, 161, 252, 0.2);
+	mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 1200px){
+	.cursor,.cursor2,.cursor3{
+		display: none
+	}
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #48546117;
+  background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 3rem;
+}
+
+.menu {
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 4rem;
+}
+
+.logo span {
+  font-weight: 300;
+}
+
+.hamburger-menu {
+  height: 6rem;
+  width: 4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.bar {
+  width: 2.5rem;
+  height: 1.8px;
+  border-radius: 5px;
+  background-color: #eee;
+  transition: 0.5s;
+  position: relative;
+  font-size: 50px;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #eee;
+  transition: 0.5s;
+}
+
+.bar:before {
+  transform: translateY(-9px);
+}
+
+.bar:after {
+  transform: translateY(9px);
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  left: 0;
+  z-index: 5;
+  overflow: hidden;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+header {
+  min-height: 100vh;
+  width: 100vw;
+  background: url("http://cdn.shutterstock.com/shutterstock/videos/22911730/thumb/4.jpg") no-repeat top center / cover;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(30, 30, 31, 0.616);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  max-width: 35rem;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 2.7rem;
+}
+
+.paragraph {
+  margin: 1rem 0;
+  font-weight: 300;
+}
+
+.paragraph a {
+  color: rgba(0, 0, 0, .8);
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.8rem;
+  background-color: rgba(0, 0, 0, 0.658);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: -3px -3px 7px rgba(200, 234, 255, 0.904),
+               3px  3px  7px rgba(155, 209, 212, 0.856);
+  font-size: 20px;
+}
+img{
+    height: 130%;
+    width: 130%;
+    margin-left: -65px;
+}
+.btn:hover{
+  background-color: rgba(0, 0, 0, 1);
+}
+li:hover{
+      background-color: rgba(97, 95, 95, 0.308);
+      -webkit-backdrop-filter: blur(1px);
+      backdrop-filter: blur(20px);
+      text-align: center;
+      border-bottom: 3px solid white;
+      border-top: 3px solid white;
+      transform: translateZ(10px);
+      animation: appear 0.5s forwards ease-in-out;
+   
+      
+}
+
+.container.active .bar {
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.container.active .bar:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.container.active .bar:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.container.active .main {
+  animation: main-animation 0.5s ease;
+  cursor: pointer;
+  transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+}
+
+@keyframes main-animation {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+}
+@keyframes move {
+   
+}
+.links {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+  color: #eee;
+  padding: 0.7rem 0;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hide 0.5s forwards ease;
+}
+
+.links a:hover {
+  color: #fff;
+}
+ul i{
+  color: #fff;
+  font-size: 30px;
+  margin-top: -37px;
+  margin-left: -35px;
+  position: absolute;
+  
+}
+ul li:hover .fab{
+  display: none;
+}
+ul li .fas{
+  margin-left: -40px;
+}
+ul li:hover .fas{
+  display: none;
+}
+ul li:hover .far{
+  display: none;
+}
+
+.container.active .links a {
+  animation: appear 0.5s forwards ease var(--i);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.5s;
+  background-color: white;
+}
+
+.shadow.one {
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.shadow.two {
+  z-index: -2;
+  opacity: 0.1;
+}
+
+.container.active .shadow.one {
+  animation: shadow-one 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+}
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.685);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
+    margin-top: -80px;
+    z-index: 999999;
+    position: absolute;
+    text-align: center;
+    
+}
+.copyright{
+    
+    text-align: center;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    
+    margin-top: 24px;
+
+}
+@keyframes shadow-one {
+  0% {
+    transform: translate(0);
+  }
+
+  5% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+  }
+}
+
+.container.active .shadow.two {
+  animation: shadow-two 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+}
+
+@keyframes shadow-two {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+  }
+}
+
+.container.active .main:hover + .shadow.one {
+  transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
+}
+
+.container.active .main:hover {
+  transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+}
+@media only screen and (max-device-width:500px){
+    img{
+    height: 140%;
+    width: 140%;
+    margin-left: -55px;
+    }
+    .copyright{
+        margin-left: -25px;
+        font-size: 20px;
+        }
+    .far.fa-copyright.c{
+        margin-top: 10px;
+    }
+    .paragraph{
+      font-size: 10px;
+    }
+    ul{
+      margin-left: -500px;
+      transform: scale(0.85);
+    }
+   .main{
+        
+   }
+    .shadow.one{
+      display: none;
+    }
+    .shadow{
+      display: none;
+    }
+}
+@media only screen and (max-device-width:350px){
+    img{
+      height: 151.3%;
+      width: 151.3%;
+
+    }
+    .paragraph{
+      font-size: 5px;
+    }
+    ul{
+      margin-left: -370px;
+      transform: scale(0.85);
+    }
+}
+@media only screen and (max-device-width: 900px){
+    .btn{
+        display: none;
+    }
+    .cursor.cursor-follower{
+      display: none;
+    }
+    .cursor.cursor-dot{
+      display: none;
+    }
+}
+
+	</style>
+</head>
+
+<body>
+  <div class='cursor' id="cursor"></div>
+	<div class='cursor2' id="cursor2"></div>
+	<div class='cursor3' id="cursor3"></div>
+	<div class="container">
+        <div class="navbar" class="hover-target">
+		  <div class="menu">
+			<h3 class="logo" style="font-size: 25px;margin-top: 17px; font-family: 'Righteous', cursive;text-shadow: -8px -8px 10px rgb(255, 25, 151),8px 8px 10px rgb(255, 48, 144);
+      width: fit-content; box-shadow: -5px -5px 10px pink,5px 5px 10px crimson; border-top: 3px solid whitesmoke;border-left: 3px solid whitesmoke;
+      padding: 5px;border-bottom: 3px solid rgb(252, 32, 167);border-right: 3px solid rgb(252, 32, 167);"><b>WEL</b><span style="font-family: 'Monoton', cursive; color: rgb(187, 255, 255);
+      padding: 5px 5px 5px 5px;
+      text-shadow: -5px -5px 10px rgb(145, 250, 250), 5px 5px 10px aqua;">COME</span></h3>
+			<div class="hamburger-menu" class="hover-target">
+			  <div class="bar" class="hover-target"></div>
+			</div>
+		  </div>
+		</div>
+	  
+		<div class="main-container">
+		  <div class="main">
+			<header>
+			  <div class="overlay">
+				<div class="inner">
+                    <img src="D:\Web Development Codings\Website\Untitledlogo__2_-removebg-preview (1).png">
+				  
+		<p class="paragraph" style="margin-top: -15px; font-size: 42px;font-family: 'Yanone Kaffeesatz', sans-serif;padding: 5px;color:rgb(238, 251, 255);
+            box-shadow: -2px -2px 5px antiquewhite,
+                          2px  2px  5px aqua;
+            text-shadow: 5px 5px 10px rgb(30, 206, 191),-5px -5px 10px rgb(30, 206, 191);padding: 10px 10px 10px 10px;">
+					#Together We Work Better We Explore
+				
+				  </p>
+				  <p class="paragraph">
+					
+				  </p>
+				  <p class="paragraph">
+
+				  </p>
+				  <a href="signinportal.html"><button class="btn" style="text-shadow: -5px -5px 10px rgb(233, 10, 114),5px 5px 10px rgb(236, 11, 142);"><b>Membership</b></button></a>
+				</div>
+			  </div>
+			</header>
+		  </div>
+	  
+		  <div class="shadow one"></div>
+		  <div class="shadow two"></div>
+		</div>
+	  
+		<div class="links">
+		  <ul style="font-family: 'Hammersmith One', sans-serif; font-size: 20px;">
+      
+			<li>
+			  <a href="Profile cards.html" style="--i: 0.05s;">  Profile</a>
+        <pre><i class="fas fa-id-card-alt"></i></pre>
+			</li>
+			<li>
+			  <a href="attributes.html" style="--i: 0.1s;">  Attributes</a>
+        <pre><i class="fab fa-elementor"></i></pre>
+			</li>
+			<li>
+			  <a href="about page.html" style="--i: 0.15s;">About</a>
+        <pre><i class="fas fa-info-circle"></i></pre>
+			</li>
+			<li>
+			  <a href="Upcomig page.html" style="--i: 0.2s;">UPCOMINGS</a>
+        <pre><i class="fas fa-external-link-square-alt"></i></pre>
+			</li>
+			<li>
+			  <a href="loginsite.html" style="--i: 0.25s;">Sign In/Up</a>
+        <pre><i class="fas fa-sign-in-alt"></i></pre>
+			</li>
+			<li>
+      <a href="Get In Touch.html" style="--i: 0.3s;">Contact</a>
+        <pre><i class="far fa-address-book"></i></pre>
+			</li>
+            
+		  </ul>  
+		</div>
+        <div class="footer">
+        <center>
+            <pre class="copyright" style="font-family: 'Montserrat', sans-serif;">
+            <u> All Rights Reserved</u></pre></center>
+             <i class="far fa-copyright c" style="font-size: 40px; margin-top: -35px; margin-left: -130px;position: absolute;color: beige;"></i>
+        </div>
+     </div>
+
+	  <script>
+		  const hamburger_menu = document.querySelector(".hamburger-menu");
+const container = document.querySelector(".container");
+
+hamburger_menu.addEventListener("click", () => {
+  container.classList.toggle("active");
+});
+
+(function($) { "use strict";
+		
+    //Page cursors
+
+    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+        t.style.left = n.clientX + "px", 
+        t.style.top = n.clientY + "px", 
+        e.style.left = n.clientX + "px", 
+        e.style.top = n.clientY + "px", 
+        i.style.left = n.clientX + "px", 
+        i.style.top = n.clientY + "px"
+    });
+    var t = document.getElementById("cursor"),
+        e = document.getElementById("cursor2"),
+        i = document.getElementById("cursor3");
+    function n(t) {
+        e.classList.add("hover"), i.classList.add("hover")
+    }
+    function s(t) {
+        e.classList.remove("hover"), i.classList.remove("hover")
+    }
+    s();
+    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+        o(r[a])
+    }
+    function o(t) {
+        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+    }
+    
+    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+            t.style.left = n.clientX + "px", 
+            t.style.top = n.clientY + "px", 
+            e.style.left = n.clientX + "px", 
+            e.style.top = n.clientY + "px", 
+            i.style.left = n.clientX + "px", 
+            i.style.top = n.clientY + "px"
+        });
+        var t = document.getElementById("cursor"),
+            e = document.getElementById("cursor2"),
+            i = document.getElementById("cursor3");
+        function n(t) {
+            e.classList.add("hover"), i.classList.add("hover")
+        }
+        function s(t) {
+            e.classList.remove("hover"), i.classList.remove("hover")
+        }
+        s();
+        for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+            o(r[a])
+        }
+        function o(t) {
+            t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+        }
+        
+  
+  })(jQuery); 
+	  </script>
+</body>
+</html>
